@@ -1,0 +1,70 @@
+.section { background: var(--ink); color: white; }
+
+.box {
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  gap: 54px;
+  align-items: end;
+}
+
+.box :global(.eyebrow) { color: #c7a56f; }
+
+.box h2 {
+  max-width: 680px;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 5.4rem);
+  line-height: .94;
+  font-weight: 500;
+  letter-spacing: -.04em;
+}
+
+.box p { max-width: 650px; color: rgba(255,255,255,.62); }
+
+.form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.form > div {
+  display: flex;
+  gap: 8px;
+}
+
+.form input {
+  min-width: 0;
+  flex: 1;
+  min-height: 52px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  padding: 0 18px;
+  background: rgba(255,255,255,.08);
+  color: white;
+  outline: none;
+}
+
+.form button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0 18px;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.form small {
+  display: block;
+  margin-top: 9px;
+  color: rgba(255,255,255,.42);
+}
+
+@media (max-width: 850px) {
+  .box { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .form > div { flex-direction: column; }
+  .form button { min-height: 52px; }
+}

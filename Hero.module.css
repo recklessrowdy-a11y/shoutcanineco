@@ -1,0 +1,125 @@
+.hero {
+  padding: 34px 0 74px;
+}
+
+.grid {
+  min-height: 680px;
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 30px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px 3vw 42px 0;
+}
+
+.copy h1 {
+  max-width: 760px;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(3.6rem, 7vw, 7.8rem);
+  line-height: .84;
+  letter-spacing: -.065em;
+  font-weight: 500;
+}
+
+.copy > p:not(.eyebrow) {
+  max-width: 660px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.visual {
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 28% 20%, rgba(169,136,83,.3), transparent 28%),
+    radial-gradient(circle at 78% 70%, rgba(106,31,42,.48), transparent 36%),
+    linear-gradient(145deg, #171412, #302725);
+  box-shadow: var(--shadow);
+}
+
+.orbit {
+  position: absolute;
+  width: 72%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 50%;
+  top: 4%;
+  left: 14%;
+}
+
+.orbit::before,
+.orbit::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border: 1px dotted rgba(255,255,255,.14);
+  border-radius: 50%;
+}
+
+.orbit::after {
+  inset: 22%;
+}
+
+.dogMark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.8);
+  font-family: Georgia, serif;
+  font-size: clamp(15rem, 30vw, 28rem);
+  font-style: italic;
+  line-height: 1;
+  transform: translateY(-2%);
+}
+
+.caption {
+  position: absolute;
+  right: 26px;
+  bottom: 24px;
+  width: min(340px, calc(100% - 52px));
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.17);
+  background: rgba(17,14,13,.48);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  color: white;
+}
+
+.caption span {
+  font-size: .67rem;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,.6);
+}
+
+.caption strong {
+  display: block;
+  margin-top: 4px;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.caption p {
+  margin: 3px 0 0;
+  color: rgba(255,255,255,.66);
+}
+
+@media (max-width: 920px) {
+  .grid { grid-template-columns: 1fr; min-height: auto; }
+  .copy { padding-right: 0; }
+}
+
+@media (max-width: 580px) {
+  .hero { padding-top: 18px; }
+  .visual { min-height: 460px; }
+  .copy h1 { font-size: clamp(3.2rem, 18vw, 5rem); }
+}

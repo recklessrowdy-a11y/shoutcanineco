@@ -1,0 +1,139 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(243,239,231,.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: .86;
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -.05em;
+  white-space: nowrap;
+}
+
+.logo span {
+  margin-top: 5px;
+  font-family: Inter, sans-serif;
+  font-size: .55rem;
+  letter-spacing: .18em;
+}
+
+.desktopNav {
+  display: flex;
+  gap: 4px;
+  margin-inline: auto;
+}
+
+.navGroup { position: relative; }
+
+.navButton {
+  border: 0;
+  background: transparent;
+  padding: 26px 11px;
+  color: inherit;
+  cursor: pointer;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+}
+
+.navButton:hover { color: var(--burgundy); }
+
+.mega {
+  position: fixed;
+  left: 50%;
+  top: 76px;
+  width: min(calc(100% - 32px), var(--max));
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: .8fr 2fr;
+  gap: 36px;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: 0 0 22px 22px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.mega h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.megaLinks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px 24px;
+}
+
+.megaLinks a:hover { color: var(--burgundy); }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.actions button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 10px;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.actions button:hover { background: rgba(0,0,0,.05); }
+
+.menuButton { display: none; }
+
+.mobileNav {
+  display: none;
+  padding: 0 16px 18px;
+  background: var(--paper);
+}
+
+.mobileNav details {
+  border-top: 1px solid var(--line);
+}
+
+.mobileNav summary {
+  padding: 16px 0;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.mobileNav details div {
+  display: grid;
+  padding: 0 0 18px;
+  gap: 12px;
+  color: var(--muted);
+}
+
+@media (max-width: 1060px) {
+  .desktopNav { display: none; }
+  .actions { margin-left: auto; }
+  .menuButton { display: inline-flex !important; }
+  .mobileNav { display: block; }
+}
+
+@media (max-width: 520px) {
+  .actions button:nth-child(2) { display: none; }
+}
